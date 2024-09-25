@@ -29,9 +29,9 @@ export function getMenuList(location: string): Group[] {
       groupLabel: "",
       menus: [
         {
-          path: "/dash/home",
+          path: "/",
           label: "Dashboard",
-          active: location.includes("/dash/home"),
+          active: location.includes("/"),
           icon: <MdAnalytics />,
           submenus: [
             // {

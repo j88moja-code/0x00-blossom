@@ -12,12 +12,14 @@ import MainDashboard from "@/components/dash/main/MainDashboard";
 import EquipmentAnalysisCharts from "@/components/dash/equipment/EquipmentAnalysisCharts";
 import MaintenanceAnalysisCharts from "@/components/dash/maintenance-requests/MaintenanceRequestsAnalysisCharts";
 import MaintenanceTicketsAnalysis from "@/components/dash/maintenance-tickets/MaintenanceTicketsAnalysis";
+import useAuth from "@/hooks/useAuth";
 
-export const Route = createLazyFileRoute("/_layout/dash/home")({
+export const Route = createLazyFileRoute("/_layout/")({
   component: HomePage,
 });
 
 function HomePage() {
+  const { user: currentUser } = useAuth();
   return (
     <>
       <ContentLayout title="Dashboard">
@@ -28,6 +30,9 @@ function HomePage() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+          Hi, {currentUser?.full_name} 👋🏼
+        </h4>
         <div>
           <Tabs defaultValue="main" className="space-y-4">
             <TabsList className="flex flex-wrap justify-center sm:justify-start gap-2">

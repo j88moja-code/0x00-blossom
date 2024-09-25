@@ -37,6 +37,7 @@ import { Route as LayoutProductionKanbanIdEloggerImport } from './routes/_layout
 
 // Create Virtual Routes
 
+const LayoutIndexLazyImport = createFileRoute('/_layout/')()
 const LayoutStoresIndexLazyImport = createFileRoute('/_layout/stores/')()
 const LayoutSheqIndexLazyImport = createFileRoute('/_layout/sheq/')()
 const LayoutProductionIndexLazyImport = createFileRoute(
@@ -46,7 +47,6 @@ const LayoutProcessIndexLazyImport = createFileRoute('/_layout/process/')()
 const LayoutMaintenanceIndexLazyImport = createFileRoute(
   '/_layout/maintenance/',
 )()
-const LayoutDashHomeLazyImport = createFileRoute('/_layout/dash/home')()
 
 // Create/Update Routes
 
@@ -59,6 +59,11 @@ const LayoutRoute = LayoutImport.update({
   id: '/_layout',
   getParentRoute: () => rootRoute,
 } as any)
+
+const LayoutIndexLazyRoute = LayoutIndexLazyImport.update({
+  path: '/',
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() => import('./routes/_layout/index.lazy').then((d) => d.Route))
 
 const LayoutStoresIndexLazyRoute = LayoutStoresIndexLazyImport.update({
   path: '/stores/',
@@ -95,13 +100,6 @@ const LayoutMaintenanceIndexLazyRoute = LayoutMaintenanceIndexLazyImport.update(
   } as any,
 ).lazy(() =>
   import('./routes/_layout/maintenance/index.lazy').then((d) => d.Route),
-)
-
-const LayoutDashHomeLazyRoute = LayoutDashHomeLazyImport.update({
-  path: '/dash/home',
-  getParentRoute: () => LayoutRoute,
-} as any).lazy(() =>
-  import('./routes/_layout/dash.home.lazy').then((d) => d.Route),
 )
 
 const LayoutStoresRequisitionsRoute = LayoutStoresRequisitionsImport.update({
@@ -223,6 +221,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/login'
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
+    }
+    '/_layout/': {
+      id: '/_layout/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof LayoutIndexLazyImport
+      parentRoute: typeof LayoutImport
     }
     '/_layout/asset-care/$equipmentId': {
       id: '/_layout/asset-care/$equipmentId'
@@ -350,13 +355,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutStoresRequisitionsImport
       parentRoute: typeof LayoutImport
     }
-    '/_layout/dash/home': {
-      id: '/_layout/dash/home'
-      path: '/dash/home'
-      fullPath: '/dash/home'
-      preLoaderRoute: typeof LayoutDashHomeLazyImport
-      parentRoute: typeof LayoutImport
-    }
     '/_layout/maintenance/': {
       id: '/_layout/maintenance/'
       path: '/maintenance'
@@ -406,6 +404,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   LayoutRoute: LayoutRoute.addChildren({
+    LayoutIndexLazyRoute,
     LayoutAssetCareEquipmentIdRoute,
     LayoutAssetCareAssetRegiterEquipmentRoute,
     LayoutMaintenanceEventIdRoute,
@@ -424,7 +423,6 @@ export const routeTree = rootRoute.addChildren({
     LayoutStoresInventoryRoute,
     LayoutStoresItemsRoute,
     LayoutStoresRequisitionsRoute,
-    LayoutDashHomeLazyRoute,
     LayoutMaintenanceIndexLazyRoute,
     LayoutProcessIndexLazyRoute,
     LayoutProductionIndexLazyRoute,
@@ -450,6 +448,7 @@ export const routeTree = rootRoute.addChildren({
     "/_layout": {
       "filePath": "_layout.tsx",
       "children": [
+        "/_layout/",
         "/_layout/asset-care/$equipmentId",
         "/_layout/asset-care/asset-regiter-equipment",
         "/_layout/maintenance/$eventId",
@@ -468,7 +467,6 @@ export const routeTree = rootRoute.addChildren({
         "/_layout/stores/inventory",
         "/_layout/stores/items",
         "/_layout/stores/requisitions",
-        "/_layout/dash/home",
         "/_layout/maintenance/",
         "/_layout/process/",
         "/_layout/production/",
@@ -479,6 +477,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/login": {
       "filePath": "login.tsx"
+    },
+    "/_layout/": {
+      "filePath": "_layout/index.lazy.tsx",
+      "parent": "/_layout"
     },
     "/_layout/asset-care/$equipmentId": {
       "filePath": "_layout/asset-care/$equipmentId.tsx",
@@ -550,10 +552,6 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_layout/stores/requisitions": {
       "filePath": "_layout/stores/requisitions.tsx",
-      "parent": "/_layout"
-    },
-    "/_layout/dash/home": {
-      "filePath": "_layout/dash.home.lazy.tsx",
       "parent": "/_layout"
     },
     "/_layout/maintenance/": {

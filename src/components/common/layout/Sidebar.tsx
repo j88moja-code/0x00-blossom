@@ -30,7 +30,7 @@ export function Sidebar() {
           variant="link"
           asChild
         >
-          <Link to="/dash/home" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <h1
               className={cn(
                 "font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300",
