@@ -14,6 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { z } from "zod";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import {
   Breadcrumb,
@@ -23,7 +24,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Loader2 } from "lucide-react";
 
 import { MaintenancePlanningService } from "@/client";
 import { ContentLayout } from "../../../components/common/layout/ContentLayout";
@@ -82,6 +82,7 @@ function MaintenanceCalendar() {
     data: events,
     isPending,
     isPlaceholderData,
+    isError,
   } = useQuery({
     ...getEventsQueryOptions({ page }),
     placeholderData: (prevData) => prevData,
@@ -113,6 +114,14 @@ function MaintenanceCalendar() {
       queryClient.invalidateQueries({ queryKey: ["maitenance-events"] });
     }
   }, [page]);
+
+  if (isPending) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-16 flex items-center justify-center">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <ContentLayout title="Maintenance Calendar">
@@ -173,11 +182,13 @@ function MaintenanceCalendar() {
           </Link>
         </div> */}
         {isPending || isPlaceholderData ? (
-          <div className="flex justify-center items-center mx-auto my-8">
-            <Loader2 className="animate-spin text-gray-500 w-8 h-8" />
+          <div className="loader"></div>
+        ) : isError ? (
+          <div className="flex items-center justify-center">
+            <p className="text-red-500">Something went wrong</p>
           </div>
         ) : (
-          <div className="w-full my-4 p-4 rounded-lg shadow-lg bg-[hsl(var(--background))] dark:bg-[hsl(var(--background))]">
+          <div className="w-full my-4 p-4 rounded-lg shadow-lg bg-[hsl(var(--background))]">
             <Calendar
               localizer={localizer}
               events={formattedEvents}

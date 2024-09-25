@@ -100,9 +100,11 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ kanban }) => {
         `${OpenAPI.BASE}/api/v1/production/kanbans/${kanbanId}/download-report`,
         {
           responseType: "blob",
-          headers: { "Content-Type": "application/pdf" },
-          // Add your token here
-          params: { token: OpenAPI.TOKEN },
+          headers: {
+            "Content-Type": "application/pdf",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+          withCredentials: true,
         }
       );
 

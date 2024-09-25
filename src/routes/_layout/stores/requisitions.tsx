@@ -123,7 +123,11 @@ function RequisitionsTable() {
         `${OpenAPI.BASE}/api/v1/stores/requisitions/${id}/pdf`,
         {
           responseType: "blob",
-          headers: { "Content-Type": "application/pdf" },
+          headers: {
+            "Content-Type": "application/pdf",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+          withCredentials: true,
         }
       );
 
