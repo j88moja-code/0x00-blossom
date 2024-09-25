@@ -96,7 +96,10 @@ const EditSHEIncidentForm: React.FC<EditSHEIncidentFormProps> = ({
             <Select
               label="Incident Type"
               register={register("incident_type")}
-              options={SHEIncidentType}
+              options={SHEIncidentType.map((i) => ({
+                label: i.label,
+                value: i.value,
+              }))}
               {...field}
               error={errors.incident_type?.message}
             />
@@ -134,17 +137,11 @@ const EditSHEIncidentForm: React.FC<EditSHEIncidentFormProps> = ({
           })}
           error={errors.incident_description?.message}
         />
-        <Controller
-          control={control}
-          name="incident_injured"
-          render={({ field }) => (
-            // @ts-ignore
-            <BooleanToggle
-              label="Is Injured?"
-              {...field}
-              onChange={field.onChange}
-            />
-          )}
+        <Input
+          label="Incident Injured"
+          type="text"
+          register={register("incident_injured")}
+          error={errors.incident_injured?.message}
         />
         <Input
           label="Incident Witness"

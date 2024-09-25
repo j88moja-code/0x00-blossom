@@ -101,6 +101,8 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ kanban }) => {
         {
           responseType: "blob",
           headers: { "Content-Type": "application/pdf" },
+          // Add your token here
+          params: { token: OpenAPI.TOKEN },
         }
       );
 
@@ -236,7 +238,7 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ kanban }) => {
               </TooltipTrigger>
               <TooltipContent side="right">
                 <p>
-                  Start the kanban and operator must start logging production
+                  {kanban.started ? "End and generate report" : "Start and log"}
                 </p>
               </TooltipContent>
             </Tooltip>

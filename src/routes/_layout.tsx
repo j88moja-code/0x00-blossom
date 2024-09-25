@@ -12,9 +12,7 @@ import useAuth, { isLoggedIn } from "@/hooks/useAuth";
 export const Route = createFileRoute("/_layout")({
   component: Layout,
   beforeLoad: async () => {
-    console.log("beforeLoad is running"); // Add this log
     if (!isLoggedIn()) {
-      console.log("User is not logged in, redirecting"); // Add this log
       throw redirect({
         to: "/login",
       });

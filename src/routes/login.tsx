@@ -62,7 +62,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-        <img src={Logo} alt="FastAPI logo" className="mx-auto w-24 h-auto" />
+        <img src={Logo} alt="FastAPI logo" className="mx-auto h-auto" />
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <Input

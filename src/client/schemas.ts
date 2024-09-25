@@ -5350,8 +5350,12 @@ export const $MaintenanceTicketUpdate = {
 export const $OSHA300LogCreate = {
 	properties: {
 		log_number: {
+	type: 'any-of',
+	contains: [{
 	type: 'string',
-	isRequired: true,
+}, {
+	type: 'null',
+}],
 },
 		incident_date: {
 	type: 'any-of',
@@ -9536,8 +9540,12 @@ export const $Role = {
 export const $SHEIncidentCreate = {
 	properties: {
 		log_number: {
+	type: 'any-of',
+	contains: [{
 	type: 'string',
-	isRequired: true,
+}, {
+	type: 'null',
+}],
 },
 		incident_date: {
 	type: 'any-of',
@@ -9552,7 +9560,7 @@ export const $SHEIncidentCreate = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	pattern: '^(Injury|Illness|Near Miss|Property Damage)$',
+	maxLength: 50,
 }, {
 	type: 'null',
 }],
@@ -9623,7 +9631,7 @@ export const $SHEIncidentCreate = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	format: 'date-time',
+	maxLength: 255,
 }, {
 	type: 'null',
 }],
@@ -9666,7 +9674,7 @@ export const $SHEIncidentRead = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	pattern: '^(Injury|Illness|Near Miss|Property Damage)$',
+	maxLength: 50,
 }, {
 	type: 'null',
 }],
@@ -9737,7 +9745,7 @@ export const $SHEIncidentRead = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	format: 'date-time',
+	maxLength: 255,
 }, {
 	type: 'null',
 }],
@@ -9778,7 +9786,7 @@ export const $SHEIncidentUpdate = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	pattern: '^(Injury|Illness|Near Miss|Property Damage)$',
+	maxLength: 50,
 }, {
 	type: 'null',
 }],
@@ -9849,7 +9857,7 @@ export const $SHEIncidentUpdate = {
 	type: 'any-of',
 	contains: [{
 	type: 'string',
-	format: 'date-time',
+	maxLength: 255,
 }, {
 	type: 'null',
 }],
@@ -9864,8 +9872,12 @@ export const $SHEIncidentUpdate = {
 export const $SHEMeetingCreate = {
 	properties: {
 		log_number: {
+	type: 'any-of',
+	contains: [{
 	type: 'string',
-	isRequired: true,
+}, {
+	type: 'null',
+}],
 },
 		meeting_date: {
 	type: 'any-of',
@@ -10168,8 +10180,12 @@ export const $SHEMeetingUpdate = {
 export const $SHEQInspectionCreate = {
 	properties: {
 		log_number: {
+	type: 'any-of',
+	contains: [{
 	type: 'string',
-	isRequired: true,
+}, {
+	type: 'null',
+}],
 },
 		inspection_date: {
 	type: 'any-of',
@@ -10418,8 +10434,12 @@ export const $SHEQInspectionUpdate = {
 export const $SHEQTrainingCreate = {
 	properties: {
 		log_number: {
+	type: 'any-of',
+	contains: [{
 	type: 'string',
-	isRequired: true,
+}, {
+	type: 'null',
+}],
 },
 		training_date: {
 	type: 'any-of',

@@ -12,7 +12,7 @@ const NotFound: React.FC = () => {
     <div className="flex flex-col items-center justify-center h-screen bg-gray-50 dark:bg-gray-900 px-4 text-center">
       <NotFoundIcon />
       <Button asChild className="mt-4" variant="default">
-        <Link to="/dash/home">Go Home</Link>
+        <Link to="/dash/home">Go to Home</Link>
       </Button>
     </div>
   );

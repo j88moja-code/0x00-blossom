@@ -1292,7 +1292,7 @@ export type MaintenanceTicketUpdate = {
 
 
 export type OSHA300LogCreate = {
-	log_number: string;
+	log_number?: string | null;
 	incident_date?: string | null;
 	incident_type?: string | null;
 	employee_name?: string | null;
@@ -2256,7 +2256,7 @@ export type Role = 'admin' | 'viewer' | 'editor';
 
 
 export type SHEIncidentCreate = {
-	log_number: string;
+	log_number?: string | null;
 	incident_date?: string | null;
 	incident_type?: string | null;
 	employee_name?: string | null;
@@ -2315,7 +2315,7 @@ export type SHEIncidentUpdate = {
 
 
 export type SHEMeetingCreate = {
-	log_number: string;
+	log_number?: string | null;
 	meeting_date?: string | null;
 	meeting_type?: string | null;
 	meeting_title?: string | null;
@@ -2371,7 +2371,7 @@ export type SHEMeetingUpdate = {
 
 
 export type SHEQInspectionCreate = {
-	log_number: string;
+	log_number?: string | null;
 	inspection_date?: string | null;
 	inspection_type?: string | null;
 	inspection_location?: string | null;
@@ -2421,7 +2421,7 @@ export type SHEQInspectionUpdate = {
 
 
 export type SHEQTrainingCreate = {
-	log_number: string;
+	log_number?: string | null;
 	training_date?: string | null;
 	training_type?: string | null;
 	training_title?: string | null;

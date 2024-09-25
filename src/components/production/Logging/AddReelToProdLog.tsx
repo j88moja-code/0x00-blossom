@@ -104,6 +104,7 @@ const AddReelToProductionLog: React.FC<AddReelToProductionLogProps> = ({
     <Input
       label={label}
       type="number"
+      step="any"
       register={register(field, {
         required: required ? `${label} is required` : false,
       })}

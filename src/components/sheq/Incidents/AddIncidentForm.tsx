@@ -37,7 +37,7 @@ const AddSHEIncidentForm: React.FC<AddSHEIncidentFormProps> = ({
     criteriaMode: "all",
     defaultValues: {
       incident_date: "",
-      incident_type: "",
+      incident_type: "Near Miss",
       employee_name: "",
       incident_title: "",
       incident_description: "",
@@ -134,17 +134,11 @@ const AddSHEIncidentForm: React.FC<AddSHEIncidentFormProps> = ({
           })}
           error={errors.incident_description?.message}
         />
-        <Controller
-          control={control}
-          name="incident_injured"
-          render={({ field }) => (
-            // @ts-ignore
-            <BooleanToggle
-              label="Is Injured?"
-              {...field}
-              onChange={field.onChange}
-            />
-          )}
+        <Input
+          label="Incident Injured"
+          type="text"
+          register={register("incident_injured")}
+          error={errors.incident_injured?.message}
         />
         <Input
           label="Incident Witness"

@@ -131,6 +131,14 @@ const EditSHEInspectionForm: React.FC<EditSHEInspectionFormProps> = ({
           register={register("inspection_remarks")}
           error={errors.inspection_remarks?.message}
         />
+        <Input
+          label="Inspection Duration"
+          type="number"
+          register={register("inspection_duration", {
+            required: "Inspection Duration is required",
+          })}
+          error={errors.inspection_duration?.message}
+        />
       </EditFormModal>
     </>
   );

@@ -27,7 +27,7 @@ const MaintenanceRequestCard: React.FC<MaintenanceRequestCardProps> = ({
         <div>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
             {maintenanceRequest.rq_number} -{" "}
-            {maintenanceRequest.department.name}
+            {maintenanceRequest?.department?.name}
           </h4>
         </div>
 
@@ -51,15 +51,15 @@ const MaintenanceRequestCard: React.FC<MaintenanceRequestCardProps> = ({
       <div className="grid grid-cols-9 gap-4 m-2">
         <div className="col-span-3">
           <MdOutlineInventory style={{ marginRight: "8px" }} />
-          Asset Number: {maintenanceRequest.equipment.asset_number}
+          Asset Number: {maintenanceRequest?.equipment?.asset_number}
         </div>
         <div className="col-span-3">
           <FiType style={{ marginRight: "8px" }} />
-          Type: {maintenanceRequest.type.name}
+          Type: {maintenanceRequest?.type?.name}
         </div>
         <div className="col-span-3">
           <GrStatusInfo style={{ marginRight: "8px" }} />
-          Status: {maintenanceRequest.status.name}
+          Status: {maintenanceRequest?.status?.name}
         </div>
       </div>
       <div className="grid grid-cols-6 gap-4 m-2">

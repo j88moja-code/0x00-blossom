@@ -100,6 +100,7 @@ const AddKanban: React.FC<AddProductionKanbanProps> = ({ open, onClose }) => {
     <Input
       label={label}
       type="number"
+      step="any"
       register={register(field, {
         required: required ? `${label} is required` : false,
       })}

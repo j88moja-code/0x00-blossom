@@ -190,7 +190,7 @@ export function getMenuList(location: string): Group[] {
           submenus: [
             {
               path: "/production/kanban",
-              label: "Kanban",
+              label: "Schedules",
               active: location.includes("/production/kanban"),
             },
             {
