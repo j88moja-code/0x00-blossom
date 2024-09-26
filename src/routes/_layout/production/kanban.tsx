@@ -18,6 +18,7 @@ import KanbanCard from "../../../components/production/Kanban/KanbanCard";
 import Navbar from "../../../components/common/NavBar";
 import FormComponent from "@/components/common/form/search-and-filter";
 import { ProductionKanbansService } from "../../../client";
+import useTitle from "@/hooks/useTitle";
 
 const kanbansSearchSchema = z.object({
   page: z.number().default(1),
@@ -58,6 +59,8 @@ function getProdKanbanQueryOptions(search: KanbansSearch) {
 }
 
 function ProdKanbanList() {
+  const title = "Production - Production Schedules";
+  useTitle(title);
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
   const setPage = (page: number) =>

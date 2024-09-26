@@ -16,6 +16,7 @@ import { RequestsAndTicketsService } from "@/client";
 import RiskAssessmentCard from "../../../components/maintenance/TRAandPTW/TRACard";
 import Navbar from "../../../components/common/NavBar";
 import { ContentLayout } from "@/components/common/layout/ContentLayout";
+import useTitle from "@/hooks/useTitle";
 
 const riskAssessmentsSearchSchema = z.object({
   page: z.number().catch(1),
@@ -45,6 +46,7 @@ function getRiskAssessmentsQueryOptions({ page }: { page: number }) {
 }
 
 function RiskAssessmentsList() {
+  useTitle("Maintenance - Risk Assessments");
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });

@@ -24,6 +24,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import useTitle from "@/hooks/useTitle";
 
 import { MaintenancePlanningService } from "@/client";
 import { ContentLayout } from "../../../components/common/layout/ContentLayout";
@@ -71,6 +72,7 @@ function getEventsQueryOptions(search: EventsSearch) {
 }
 
 function MaintenanceCalendar() {
+  useTitle("Maintenance Events");
   const queryClient = useQueryClient();
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const { page } = Route.useSearch();

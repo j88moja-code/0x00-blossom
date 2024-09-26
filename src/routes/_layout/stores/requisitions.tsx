@@ -32,6 +32,7 @@ import { ContentLayout } from "@/components/common/layout/ContentLayout";
 import { useToastStore } from "@/hooks/useToastStore";
 import CustomDialog from "../../../components/common/CustomDialog";
 import { handleError } from "@/utils";
+import useTitle from "@/hooks/useTitle";
 
 const woRqsSearchSchema = z.object({
   page: z.number().catch(1),
@@ -70,6 +71,7 @@ const DialogTypes = {
 };
 
 function RequisitionsTable() {
+  useTitle("Stores - Requisitions");
   const [search, setSearch] = useState({ page: 1 });
   const [dialog, setDialog] = useState({ open: false, type: "", id: 1 });
 

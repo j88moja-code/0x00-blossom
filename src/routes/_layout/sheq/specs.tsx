@@ -20,6 +20,7 @@ import SpecCard from "../../../components/production/Specification/SpecCard";
 import Navbar from "../../../components/common/NavBar";
 import { ContentLayout } from "../../../components/common/layout/ContentLayout";
 import { ProductionSpecificationsService } from "../../../client";
+import useTitle from "@/hooks/useTitle";
 
 const specsSearchSchema = z.object({
   page: z.number().default(1),
@@ -212,6 +213,7 @@ function SpecList() {
 }
 
 function Specs() {
+  useTitle("SHEQ - Product Specifications");
   return (
     <>
       <ContentLayout title="Product Specifications">

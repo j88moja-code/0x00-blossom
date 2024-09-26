@@ -16,6 +16,7 @@ import MaintenanceTicketCard from "@/components/maintenance/RequestsAndTickets/M
 import { RequestsAndTicketsService } from "@/client";
 import Navbar from "../../../components/common/NavBar";
 import { ContentLayout } from "@/components/common/layout/ContentLayout";
+import useTitle from "@/hooks/useTitle";
 
 // Define the service request search schema using zod
 const maintenanceRequestSearchSchema = z.object({
@@ -46,6 +47,7 @@ function getMaintenanceTicketQueryOptions({ page }: { page: number }) {
 }
 
 function MaintenanceTicketList() {
+  useTitle("Maintenance - Tickets");
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });

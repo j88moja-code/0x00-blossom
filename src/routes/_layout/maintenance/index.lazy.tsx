@@ -7,12 +7,14 @@ import {
 } from "react-icons/md";
 import { GrHostMaintenance, GrVmMaintenance } from "react-icons/gr";
 import { ContentLayout } from "../../../components/common/layout/ContentLayout";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/maintenance/")({
   component: MaintenanceIndex,
 });
 
 function MaintenanceIndex() {
+  useTitle("Maintenance");
   return (
     <ContentLayout title="Maintenance">
       <div className="container mx-auto my-8 px-4 lg:px-0">

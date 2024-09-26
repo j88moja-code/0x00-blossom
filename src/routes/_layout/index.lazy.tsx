@@ -13,12 +13,14 @@ import EquipmentAnalysisCharts from "@/components/dash/equipment/EquipmentAnalys
 import MaintenanceAnalysisCharts from "@/components/dash/maintenance-requests/MaintenanceRequestsAnalysisCharts";
 import MaintenanceTicketsAnalysis from "@/components/dash/maintenance-tickets/MaintenanceTicketsAnalysis";
 import useAuth from "@/hooks/useAuth";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/")({
   component: HomePage,
 });
 
 function HomePage() {
+  useTitle("CMOOS Dashboard");
   const { user: currentUser } = useAuth();
   return (
     <>

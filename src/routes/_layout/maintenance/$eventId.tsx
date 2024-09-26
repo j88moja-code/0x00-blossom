@@ -14,6 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import useTitle from "@/hooks/useTitle";
 
 import MaintenanceEvent from "../../../components/asset-care/MaintenanceEvent/MaintenanceEvent";
 
@@ -38,6 +39,7 @@ function getMaintenanceByIdQueryOptions({ eventId }: { eventId: number }) {
 }
 
 function IndividualMaintenanceEvent() {
+  useTitle("Maintenance Event");
   const params = Route.useParams();
   const result = idNavigateSchema.safeParse({
     eventId: params.eventId,

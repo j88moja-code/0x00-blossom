@@ -27,7 +27,7 @@ const LoadingScreen = () => (
       J88Moja Systems
     </Typography> */}
     <span className="loader"></span>
-    <h6 className="text-gray-900 dark:text-gray-100">Loading...</h6>
+    {/* <h6 className="text-gray-900 dark:text-gray-100">Loading...</h6> */}
     {/* <Typography variant="body2" color="text.secondary">
       Hang tight, we're on it! Your patience is greatly appreciated.
     </Typography> */}

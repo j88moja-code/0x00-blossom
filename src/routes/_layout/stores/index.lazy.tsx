@@ -8,12 +8,14 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { BiSolidComponent } from "react-icons/bi";
 import { MdInventory, MdRequestPage, MdRequestQuote } from "react-icons/md";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/stores/")({
   component: StoresIndex,
 });
 
 function StoresIndex() {
+  useTitle("Stores");
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ flexGrow: 1 }}>

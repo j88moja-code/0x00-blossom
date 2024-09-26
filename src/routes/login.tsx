@@ -1,4 +1,5 @@
 import Input from "@/components/common/form/input";
+import useTitle from "@/hooks/useTitle";
 
 import { Button } from "@/components/ui/button";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -33,6 +34,7 @@ export const Route = createFileRoute("/login")({
 // });
 
 function Login() {
+  useTitle("CMOOS-Login");
   const { loginMutation, resetError } = useAuth();
   const {
     register,

@@ -3,12 +3,14 @@ import { TbLogs } from "react-icons/tb";
 import { MdAssignment } from "react-icons/md";
 import { LuFolderKanban } from "react-icons/lu";
 import { ContentLayout } from "@/components/common/layout/ContentLayout";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/production/")({
   component: ProductionIndex,
 });
 
 function ProductionIndex() {
+  useTitle("Production");
   return (
     <ContentLayout title="Production">
       <div className="container mx-auto my-8 px-4 lg:px-0">

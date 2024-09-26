@@ -9,6 +9,7 @@ import { emailPattern, handleError } from "../utils";
 import Logo from "../assets/images/logo.png";
 import { type ApiError, AuthenticationService } from "@/client";
 import { useToastStore } from "@/hooks/useToastStore";
+import useTitle from "@/hooks/useTitle";
 
 interface RecoverPassword {
   email: string;
@@ -26,6 +27,7 @@ export const Route = createFileRoute("/recover-password")({
 });
 
 function RecoverPassword() {
+  useTitle("Recover Password");
   const showToast = useToastStore((state) => state.showToast);
   const {
     register,

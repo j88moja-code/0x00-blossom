@@ -26,6 +26,7 @@ import { z } from "zod";
 
 import { ProductionLogsService } from "../../../client";
 import ActionsMenu from "../../../components/common/ActionsMenu";
+import useTitle from "@/hooks/useTitle";
 // import { LoggerAndDownload } from "../../../components/production/Kanban/Buttons";
 // import { Route as ELoggerRoute } from "./$kanbanId.elogger";
 // import { TbLogs } from "react-icons/tb";
@@ -66,6 +67,8 @@ function getProdLogsQueryOptions(search: ProdLogsSearch) {
 }
 
 function ProdLogsTable() {
+  const title = "Production - Production Logs";
+  useTitle(title);
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
   const setPage = (page: number) =>
@@ -133,7 +136,7 @@ function ProdLogsTable() {
       />
       <div className="overflow-x-auto">
         <Table>
-          <TableCaption>A list of planned work.</TableCaption>
+          <TableCaption>A list of production logs.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead>Prod Log #</TableHead>

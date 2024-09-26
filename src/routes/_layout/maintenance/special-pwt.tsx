@@ -15,12 +15,14 @@ import { HotWorksTable } from "../../../components/maintenance/TRAandPTW/Special
 import { ConfinedSpacesTable } from "../../../components/maintenance/TRAandPTW/SpecializedPermits/Tables/ConfinedSpacesTable";
 import { RiggingAndLiftingsTable } from "../../../components/maintenance/TRAandPTW/SpecializedPermits/Tables/RiggingAndLiftingsTable";
 import { WorkingAtHeightsTable } from "../../../components/maintenance/TRAandPTW/SpecializedPermits/Tables/WorkingAHeightsTable";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createFileRoute("/_layout/maintenance/special-pwt")({
   component: SpecialisedPermits,
 });
 
 function SpecialisedPermits() {
+  useTitle("Maintenance - Specialized Permits");
   return (
     <>
       <ContentLayout title="Specialized Permits">

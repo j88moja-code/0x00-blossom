@@ -13,6 +13,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import useTitle from "@/hooks/useTitle";
 
 // Define validation schema for equipmentId
 const idNavigateSchema = z.object({
@@ -39,6 +40,7 @@ function getEquipmentByIdQueryOptions({
 
 // Component to display individual equipment
 function IndividualEquipment() {
+  useTitle("Equipment");
   // Extract equipmentId from route params
   const params = Route.useParams();
   const result = idNavigateSchema.safeParse({

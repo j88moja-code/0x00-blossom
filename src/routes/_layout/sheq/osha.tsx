@@ -13,6 +13,7 @@ import { ContentLayout } from "@/components/common/layout/ContentLayout";
 import { Inspections } from "../../../components/sheq/Inspections/InspectionsList";
 import { RiskAssessments } from "../../../components/sheq/RiskAssessment/RiskAssessementList";
 import { Incidents } from "../../../components/sheq/Incidents/IncidentsList";
+import useTitle from "@/hooks/useTitle";
 // import { Osha300Log } from "../../../components/sheq/Osha300Log/Osha300LogList";
 
 export const Route = createFileRoute("/_layout/sheq/osha")({
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/_layout/sheq/osha")({
 });
 
 function Osha() {
+  useTitle("SHEQ - OSHA");
   return (
     <>
       <ContentLayout title="OSHA">

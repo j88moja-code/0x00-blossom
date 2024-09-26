@@ -9,12 +9,14 @@ import Typography from "@mui/material/Typography";
 import { LiaIndustrySolid } from "react-icons/lia";
 import { MdOutlineWork } from "react-icons/md";
 import { TbLogs } from "react-icons/tb";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/process/")({
   component: ProcessIndex,
 });
 
 function ProcessIndex() {
+  useTitle("Process");
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ flexGrow: 1 }}>

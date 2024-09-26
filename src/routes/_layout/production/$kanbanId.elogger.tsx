@@ -17,6 +17,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import useTitle from "@/hooks/useTitle";
 
 const idNavigateSchema = z.object({
   kanbanId: z.preprocess((val) => Number(val), z.number().int().positive()),
@@ -43,6 +44,7 @@ function getProductionLogByKanbanIdQueryOptions({
 }
 
 function KanbanElogger() {
+  useTitle("Production - eLogger");
   const params = Route.useParams();
   const result = idNavigateSchema.safeParse({
     kanbanId: params.kanbanId,

@@ -16,6 +16,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import useTitle from "@/hooks/useTitle";
+
 const equipmentSearchSchema = z.object({
   page: z.number().catch(1),
 });
@@ -44,6 +46,7 @@ function getEquipmentQueryOptions({ page }: { page: number }) {
 }
 
 function EquipmentList() {
+  useTitle("Asset Register - Equipment");
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });

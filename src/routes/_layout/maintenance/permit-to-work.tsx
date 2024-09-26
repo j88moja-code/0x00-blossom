@@ -16,6 +16,7 @@ import { z } from "zod";
 import { RequestsAndTicketsService } from "@/client";
 import PTWCard from "../../../components/maintenance/TRAandPTW/PTWCard";
 import Navbar from "@/components/common/NavBar";
+import useTitle from "@/hooks/useTitle";
 
 const permitsSearchSchema = z.object({
   page: z.number().catch(1),
@@ -43,6 +44,7 @@ function getPermitsQueryOptions({ page }: { page: number }) {
 }
 
 function PTWList() {
+  useTitle("Maintenance - Permits to Work");
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });

@@ -3,12 +3,14 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import { FaClipboardCheck } from "react-icons/fa";
 import { FaTowerObservation } from "react-icons/fa6";
 import { LiaGlassesSolid } from "react-icons/lia";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/sheq/")({
   component: SafetyIndex,
 });
 
 function SafetyIndex() {
+  useTitle("SHEQ");
   return (
     <ContentLayout title="SHEQ">
       <div className="container mx-auto my-8 px-4 lg:px-0">

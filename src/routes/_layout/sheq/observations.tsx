@@ -15,6 +15,7 @@ import { z } from "zod";
 import SafetyObservationCard from "../../../components/sheq/SafetyObservationCard";
 import Navbar from "../../../components/common/NavBar";
 import { SafetyService } from "../../../client";
+import useTitle from "@/hooks/useTitle";
 
 const observationsSearchSchema = z.object({
   page: z.number().catch(1),
@@ -42,6 +43,7 @@ function getSafetyObservationsQueryOptions({ page }: { page: number }) {
 }
 
 function ObservationsList() {
+  useTitle("SHEQ - Safety Observations");
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });

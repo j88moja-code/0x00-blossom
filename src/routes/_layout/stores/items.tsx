@@ -16,6 +16,7 @@ import ItemCard from "../../../components/stores/Items/ItemsCard";
 import Navbar from "../../../components/common/NavBar";
 import { ContentLayout } from "@/components/common/layout/ContentLayout";
 import { StoresService } from "../../../client";
+import useTitle from "@/hooks/useTitle";
 
 // Define the item search schema using zod
 const itemSearchSchema = z.object({
@@ -118,6 +119,7 @@ function ItemsList() {
 }
 
 function Items() {
+  useTitle("Stores -Items");
   return (
     <ContentLayout title="Inventory">
       <Breadcrumb>

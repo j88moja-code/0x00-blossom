@@ -27,6 +27,7 @@ import { StoresService } from "../../../client";
 import Navbar from "../../../components/common/NavBar";
 import ActionsMenu from "../../../components/common/ActionsMenu";
 import { ContentLayout } from "@/components/common/layout/ContentLayout";
+import useTitle from "@/hooks/useTitle";
 
 const inventorySearchSchema = z.object({
   page: z.number().catch(1),
@@ -149,6 +150,7 @@ function InventoryTable() {
 }
 
 function InventoryList() {
+  useTitle("Stores -Inventory");
   return (
     <ContentLayout title="Inventory">
       <Breadcrumb>

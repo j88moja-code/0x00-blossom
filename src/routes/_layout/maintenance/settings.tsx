@@ -14,12 +14,14 @@ import { CategoryListTable } from "@/components/maintenance/Settings/CategoryLis
 import { DepartmentListTable } from "@/components/maintenance/Settings/DepartmentListTable";
 import { MTypesListTable } from "@/components/maintenance/Settings/MTypeListTable";
 import { StatusListTable } from "@/components/maintenance/Settings/StatusListTable";
+import useTitle from "@/hooks/useTitle";
 
 export const Route = createFileRoute("/_layout/maintenance/settings")({
   component: MaintenanceSettings,
 });
 
 function MaintenanceSettings() {
+  useTitle("Maintenance - Settings");
   return (
     <>
       <ContentLayout title="Maintenance Settings">
