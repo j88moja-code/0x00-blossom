@@ -13,6 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as RecoverPasswordImport } from './routes/recover-password'
 import { Route as LoginImport } from './routes/login'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutStoresRequisitionsImport } from './routes/_layout/stores/requisitions'
@@ -49,6 +50,11 @@ const LayoutMaintenanceIndexLazyImport = createFileRoute(
 )()
 
 // Create/Update Routes
+
+const RecoverPasswordRoute = RecoverPasswordImport.update({
+  path: '/recover-password',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const LoginRoute = LoginImport.update({
   path: '/login',
@@ -220,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/recover-password': {
+      id: '/recover-password'
+      path: '/recover-password'
+      fullPath: '/recover-password'
+      preLoaderRoute: typeof RecoverPasswordImport
       parentRoute: typeof rootRoute
     }
     '/_layout/': {
@@ -431,6 +444,7 @@ export const routeTree = rootRoute.addChildren({
     LayoutProductionKanbanIdEloggerRoute,
   }),
   LoginRoute,
+  RecoverPasswordRoute,
 })
 
 /* prettier-ignore-end */
@@ -442,7 +456,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/_layout",
-        "/login"
+        "/login",
+        "/recover-password"
       ]
     },
     "/_layout": {
@@ -477,6 +492,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/login": {
       "filePath": "login.tsx"
+    },
+    "/recover-password": {
+      "filePath": "recover-password.tsx"
     },
     "/_layout/": {
       "filePath": "_layout/index.lazy.tsx",

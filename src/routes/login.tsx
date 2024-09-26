@@ -6,7 +6,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 // // import { useForm } from "react-hook-form";
 // import { z } from "zod";
 import {
-  // Link as RouterLink,
+  Link as RouterLink,
   createFileRoute,
   redirect,
 } from "@tanstack/react-router";
@@ -62,7 +62,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-        <img src={Logo} alt="FastAPI logo" className="mx-auto h-auto" />
+        <img src={Logo} alt="CMOOS logo" className="mx-auto h-auto" />
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <Input
@@ -83,27 +83,39 @@ function Login() {
             })}
             error={errors?.password?.message}
           />
+          {/* Remember me */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember"
+                type="checkbox"
+                className="w-4 h-4 border-gray-300 rounded text-blue-600 focus:ring-blue-500"
+              />
+              <label
+                htmlFor="remember"
+                className="ml-2 block text-sm text-gray-900 dark:text-gray-300"
+              >
+                Remember me
+              </label>
+            </div>
+          </div>
 
-          {/* <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between">
+            <Button type="submit" variant="default">
+              {isSubmitting ? (
+                <span className="spinner-loader"></span>
+              ) : (
+                "Log in"
+              )}
+            </Button>
             <RouterLink
               to="/recover-password"
               className="text-blue-500 hover:underline"
             >
               Forgot password?
             </RouterLink>
-          </div> */}
-
-          <Button type="submit" variant="default">
-            {isSubmitting ? <span className="spinner-loader"></span> : "Log in"}
-          </Button>
+          </div>
         </form>
-
-        {/* <p className="mt-4 text-center">
-            Don't have an account?{" "}
-            <RouterLink to="/signup" className="text-blue-500 hover:underline">
-              Sign up
-            </RouterLink>
-          </p> */}
       </div>
     </div>
   );

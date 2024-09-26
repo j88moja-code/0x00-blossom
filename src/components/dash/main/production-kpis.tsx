@@ -117,7 +117,7 @@ const ProductionAnalysisChart: React.FC<ProductionAnalysisChartProps> = ({
       label: "Monthly",
       color: "hsl(var(--chart-3))",
     },
-    year: { label: "Quality", color: "hsl(var(--chart-4))" },
+    year: { label: "Yearly", color: "hsl(var(--chart-4))" },
     // TotalProduction: {
     //   label: "Total Production",
     //   color: "hsl(var(--chart-5))",
