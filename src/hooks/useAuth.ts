@@ -3,7 +3,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { useToastStore } from "@/hooks/useToastStore";
-
+import { handleError } from "@/utils";
 import { AxiosError } from "axios";
 import {
   type Body_login_access_token_api_v1_auth_login_access_token_post as AccessToken,
@@ -139,6 +139,7 @@ const useAuth = () => {
       }
 
       setError(errDetail);
+						handleError(err, showToast);
     },
   });
 
