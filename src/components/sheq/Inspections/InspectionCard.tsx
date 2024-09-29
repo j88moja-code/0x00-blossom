@@ -27,7 +27,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
         <div className="grid grid-cols-2 gap-4">
           {/* Date */}
           <div className="flex items-center">
-            <FaRegCalendarAlt className="mr-2 text-blue-500" />
+            <FaRegCalendarAlt style={{ marginRight: "8px" }} />
             <span className="text-gray-700 dark:text-gray-300">
               Date:{" "}
               {new Date(inspectionData.inspection_date || "").toLocaleString()}
@@ -36,7 +36,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
 
           {/* Inspector */}
           <div className="flex items-center">
-            <MdSupervisorAccount className="mr-2 text-blue-500" />
+            <MdSupervisorAccount style={{ marginRight: "8px" }} />
             <span className="text-gray-700 dark:text-gray-300">
               Inspector: {inspectionData.inspection_inspector}
             </span>
@@ -44,7 +44,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
 
           {/* Location */}
           <div className="flex items-center">
-            <FaMapMarkerAlt className="mr-2 text-blue-500" />
+            <FaMapMarkerAlt style={{ marginRight: "8px" }} />
             <span className="text-gray-700 dark:text-gray-300">
               Location: {inspectionData.inspection_location}
             </span>
@@ -52,7 +52,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
 
           {/* Duration */}
           <div className="flex items-center">
-            <FaClock className="mr-2 text-blue-500" />
+            <FaClock style={{ marginRight: "8px" }} />
             <span className="text-gray-700 dark:text-gray-300">
               Duration: {inspectionData.inspection_duration} hour(s)
             </span>
@@ -62,7 +62,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
         {/* Description and Remarks */}
         <div className="mt-4">
           <div className="mb-2">
-            <AiOutlineFileText className="mr-2 inline text-blue-500" />
+            <AiOutlineFileText className="mr-2 inline" />
             <strong className="text-gray-800 dark:text-gray-200">
               Description:
             </strong>
@@ -71,7 +71,7 @@ const InspectionCard: React.FC<InspectionCardProps> = ({ inspectionData }) => {
             </p>
           </div>
           <div>
-            <MdDescription className="mr-2 inline text-blue-500" />
+            <MdDescription className="mr-2 inline" />
             <strong className="text-gray-800 dark:text-gray-200">
               Remarks:
             </strong>

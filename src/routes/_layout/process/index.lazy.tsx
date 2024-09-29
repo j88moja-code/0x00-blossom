@@ -1,14 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { LiaIndustrySolid } from "react-icons/lia";
-import { MdOutlineWork } from "react-icons/md";
-import { TbLogs } from "react-icons/tb";
+import { MdAssignment, MdOutlineWork } from "react-icons/md";
+import { ContentLayout } from "@/components/common/layout/ContentLayout";
 import useTitle from "@/hooks/useTitle";
 
 export const Route = createLazyFileRoute("/_layout/process/")({
@@ -18,89 +11,66 @@ export const Route = createLazyFileRoute("/_layout/process/")({
 function ProcessIndex() {
   useTitle("Process");
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          Process
-        </Typography>
-        <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card>
-              <CardMedia
-                component="div"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: 140,
-                  backgroundColor: "#f5f5f5",
-                }}
-              >
+    <ContentLayout title="Process">
+      <div className="container mx-auto my-8 px-4 lg:px-0">
+        <div className="flex-grow">
+          <h1 className="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
+            Process
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="bg-white dark:bg-gray-800 shadow rounded overflow-hidden">
+              <div className="flex justify-center items-center h-36 bg-gray-200 dark:bg-gray-700">
                 <LiaIndustrySolid
-                  style={{ fontSize: "100px", color: "#1976d2" }}
+                  size={50}
+                  className="text-gray-900 dark:text-gray-100"
                 />
-              </CardMedia>
-              <CardContent>
-                <Typography variant="h5" component="h2">
+              </div>
+              <div className="p-4">
+                <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">
                   Process
-                </Typography>
-                <Typography>
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
                   Manage and track production processes effectively.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card>
-              <CardMedia
-                component="div"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: 140,
-                  backgroundColor: "#f5f5f5",
-                }}
-              >
-                <MdOutlineWork size={50} />
-              </CardMedia>
-              <CardContent>
-                <Typography variant="h5" component="h2">
+                </p>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 shadow rounded overflow-hidden">
+              <div className="flex justify-center items-center h-36 bg-gray-200 dark:bg-gray-700">
+                <MdOutlineWork
+                  size={50}
+                  className="text-gray-900 dark:text-gray-100"
+                />
+              </div>
+              <div className="p-4">
+                <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">
                   Short Term Control
-                </Typography>
-                <Typography>
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
                   Control and manage hour to hour plant process operations with
                   ease.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card>
-              <CardMedia
-                component="div"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: 140,
-                  backgroundColor: "#f5f5f5",
-                }}
-              >
-                <TbLogs size={50} />
-              </CardMedia>
-              <CardContent>
-                <Typography variant="h5" component="h2">
-                  Logs
-                </Typography>
-                <Typography>
-                  Track and manage production process logs.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 shadow rounded overflow-hidden">
+              <div className="flex justify-center items-center h-36 bg-gray-200 dark:bg-gray-700">
+                <MdAssignment
+                  size={50}
+                  className="text-gray-900 dark:text-gray-100"
+                />
+              </div>
+              <div className="p-4">
+                <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">
+                  Process Checklists
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Manage and track process checklists effectively.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ContentLayout>
   );
 }

@@ -63,11 +63,13 @@ function IncidentsList() {
     <>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-16">
         {incidents?.she_incidents.length ? (
-          incidents?.she_incidents.map((incident) => (
-            <div key={incident.id}>
-              <IncidentCard incidentData={incident} />
-            </div>
-          ))
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {incidents?.she_incidents.map((incident) => (
+              <div key={incident.id}>
+                <IncidentCard incidentData={incident} />
+              </div>
+            ))}
+          </div>
         ) : (
           <p className="text-lg text-gray-700 dark:text-gray-300">
             No data found.

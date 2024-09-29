@@ -74,6 +74,16 @@ export const $Body_reset_password_api_v1_auth_reset_password_post = {
 	},
 } as const;
 
+export const $Body_test_email_api_v1_test_email_post = {
+	properties: {
+		email_to: {
+	type: 'string',
+	isRequired: true,
+	format: 'email',
+},
+	},
+} as const;
+
 export const $CategoriesList = {
 	properties: {
 		categories: {
@@ -129,6 +139,21 @@ export const $CategoryRead = {
 	type: 'string',
 	isRequired: true,
 	format: 'date-time',
+},
+	},
+} as const;
+
+export const $ChangePassword = {
+	properties: {
+		old_password: {
+	type: 'string',
+	isRequired: true,
+},
+		new_password: {
+	type: 'string',
+	isRequired: true,
+	maxLength: 128,
+	minLength: 6,
 },
 	},
 } as const;
@@ -386,6 +411,16 @@ export const $Downtime = {
 		equipment_id: {
 	type: 'number',
 	isRequired: true,
+},
+		created_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
+		updated_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
 },
 		equipment: {
 	type: 'EquipmentResponseModel',
@@ -3857,22 +3892,6 @@ export const $MaintenanceEvent = {
 },
 		work_efficiency: {
 	type: 'number',
-	isRequired: true,
-},
-	},
-} as const;
-
-export const $MaintenanceEventAddPlannedTickets = {
-	properties: {
-		id: {
-	type: 'number',
-	isRequired: true,
-},
-		maintenance_tickets: {
-	type: 'array',
-	contains: {
-		type: 'MaintenanceTicket',
-	},
 	isRequired: true,
 },
 	},
@@ -8278,6 +8297,16 @@ export const $ProductionLog = {
 }],
 	isNullable: true,
 },
+		created_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
+		updated_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
 		total_production: {
 	type: 'number',
 	isRequired: true,
@@ -8539,6 +8568,16 @@ export const $QualityInspectionItem = {
 	type: 'null',
 }],
 	isNullable: true,
+},
+		created_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
+		updated_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
 },
 		reel: {
 	type: 'Reel',
@@ -8834,6 +8873,10 @@ export const $Reel = {
 	type: 'boolean',
 	isRequired: true,
 },
+		has_joint: {
+	type: 'boolean',
+	isRequired: true,
+},
 		production_log_id: {
 	type: 'number',
 	isRequired: true,
@@ -8846,6 +8889,16 @@ export const $Reel = {
 	type: 'null',
 }],
 	isNullable: true,
+},
+		created_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
+		updated_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
 },
 		production_log: {
 	type: 'ProductionLogRead',
@@ -8929,6 +8982,10 @@ export const $ReelCreate = {
 	minimum: 0,
 },
 		is_saleable: {
+	type: 'boolean',
+	isRequired: true,
+},
+		has_joint: {
 	type: 'boolean',
 	isRequired: true,
 },
@@ -9027,6 +9084,10 @@ export const $ReelRead = {
 	type: 'boolean',
 	isRequired: true,
 },
+		has_joint: {
+	type: 'boolean',
+	isRequired: true,
+},
 		production_log_id: {
 	type: 'number',
 	isRequired: true,
@@ -9113,6 +9174,10 @@ export const $ReelUpdate = {
 	minimum: 0,
 },
 		is_saleable: {
+	type: 'boolean',
+	isRequired: true,
+},
+		has_joint: {
 	type: 'boolean',
 	isRequired: true,
 },
@@ -12787,6 +12852,16 @@ export const $StockPrepDowntime = {
 	type: 'number',
 	isRequired: true,
 },
+		created_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
+		updated_at: {
+	type: 'string',
+	isRequired: true,
+	format: 'date-time',
+},
 		equipment: {
 	type: 'EquipmentResponseModel',
 	isRequired: true,
@@ -13983,6 +14058,36 @@ export const $User = {
 	isRequired: true,
 },
 		full_name: {
+	type: 'any-of',
+	contains: [{
+	type: 'string',
+}, {
+	type: 'null',
+}],
+},
+	},
+} as const;
+
+export const $UserUpdate = {
+	properties: {
+		email: {
+	type: 'any-of',
+	contains: [{
+	type: 'string',
+	format: 'email',
+}, {
+	type: 'null',
+}],
+},
+		first_name: {
+	type: 'any-of',
+	contains: [{
+	type: 'string',
+}, {
+	type: 'null',
+}],
+},
+		last_name: {
 	type: 'any-of',
 	contains: [{
 	type: 'string',

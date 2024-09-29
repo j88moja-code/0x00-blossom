@@ -73,13 +73,13 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
-            <Link href="/dashboard" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <CiGrid41 className="w-4 h-4 mr-3 text-muted-foreground" />
               Dashboard
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
-            <Link href="/account" className="flex items-center">
+            <Link to="/account" className="flex items-center">
               <FaUserAlt className="w-4 h-4 mr-3 text-muted-foreground" />
               Account
             </Link>

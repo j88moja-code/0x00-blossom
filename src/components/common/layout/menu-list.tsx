@@ -1,4 +1,9 @@
-import { FaHardHat, FaProjectDiagram, FaIndustry, FaCog } from "react-icons/fa";
+import {
+  FaHardHat,
+  FaProjectDiagram,
+  FaIndustry,
+  FaUserAlt,
+} from "react-icons/fa";
 import { MdAnalytics } from "react-icons/md";
 import { FaShop } from "react-icons/fa6";
 import { GrHostMaintenance } from "react-icons/gr";
@@ -236,13 +241,13 @@ export function getMenuList(location: string): Group[] {
       ],
     },
     {
-      groupLabel: "Settings",
+      groupLabel: "Account",
       menus: [
         {
-          path: "/settings",
-          label: "Settings",
-          active: location.includes("/settings"),
-          icon: <FaCog />,
+          path: "/account",
+          label: "Account",
+          active: location.includes("/account"),
+          icon: <FaUserAlt />,
           submenus: [],
         },
       ],

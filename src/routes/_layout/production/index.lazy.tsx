@@ -28,10 +28,10 @@ function ProductionIndex() {
               </div>
               <div className="p-4">
                 <h2 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">
-                  Scheduling and Specs
+                  Schedules
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Manage production scheduling and specifications.
+                  Manage production schedules with ease.
                 </p>
               </div>
             </div>

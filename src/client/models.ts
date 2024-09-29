@@ -25,6 +25,12 @@ export type Body_reset_password_api_v1_auth_reset_password_post = {
 
 
 
+export type Body_test_email_api_v1_test_email_post = {
+	email_to: string;
+};
+
+
+
 export type CategoriesList = {
 	categories: Array<app__schemas__maintenance__Category>;
 	count: number;
@@ -45,6 +51,13 @@ export type CategoryRead = {
 	id: number;
 	created_at: string;
 	updated_at: string;
+};
+
+
+
+export type ChangePassword = {
+	old_password: string;
+	new_password: string;
 };
 
 
@@ -130,6 +143,8 @@ export type Downtime = {
 	description?: string | null | null;
 	production_log_id: number;
 	equipment_id: number;
+	created_at: string;
+	updated_at: string;
 	equipment: EquipmentResponseModel;
 	production_log: ProductionLog;
 	duration: number;
@@ -893,13 +908,6 @@ export type MaintenanceEvent = {
 	completed_work_duration: string;
 	work_completion_rate: number;
 	work_efficiency: number;
-};
-
-
-
-export type MaintenanceEventAddPlannedTickets = {
-	id: number;
-	maintenance_tickets: Array<MaintenanceTicket>;
 };
 
 
@@ -1936,6 +1944,8 @@ export type ProductionLog = {
 	log_number: string;
 	kanban_id: number;
 	remarks?: string | null | null;
+	created_at: string;
+	updated_at: string;
 	total_production: number;
 	total_downtime: number;
 	quality_rate: number;
@@ -2001,6 +2011,8 @@ export type QualityInspectionItem = {
 	b_value: number;
 	brightness: number;
 	remark?: string | null | null;
+	created_at: string;
+	updated_at: string;
 	reel: Reel;
 };
 
@@ -2075,8 +2087,11 @@ export type Reel = {
 	machine_speed: number;
 	pope_speed: number;
 	is_saleable: boolean;
+	has_joint: boolean;
 	production_log_id: number;
 	remark?: string | null | null;
+	created_at: string;
+	updated_at: string;
 	production_log: ProductionLogRead;
 	quality_inspection_items?: Array<QualityInspectionItemRead> | null;
 };
@@ -2095,6 +2110,7 @@ export type ReelCreate = {
 	machine_speed: number;
 	pope_speed: number;
 	is_saleable: boolean;
+	has_joint: boolean;
 	production_log_id: number;
 	remark?: string | null | null;
 };
@@ -2120,6 +2136,7 @@ export type ReelRead = {
 	machine_speed: number;
 	pope_speed: number;
 	is_saleable: boolean;
+	has_joint: boolean;
 	production_log_id: number;
 	remark?: string | null | null;
 	created_at: string;
@@ -2140,6 +2157,7 @@ export type ReelUpdate = {
 	machine_speed: number;
 	pope_speed: number;
 	is_saleable: boolean;
+	has_joint: boolean;
 	production_log_id: number;
 	remark?: string | null | null;
 };
@@ -2802,6 +2820,8 @@ export type StockPrepDowntime = {
 	description?: string | null | null;
 	production_log_id: number;
 	equipment_id: number;
+	created_at: string;
+	updated_at: string;
 	equipment: EquipmentResponseModel;
 	production_log: ProductionLog;
 	duration: number;
@@ -3122,6 +3142,14 @@ export type User = {
 	is_viewer: boolean;
 	is_editor: boolean;
 	full_name?: string | null;
+};
+
+
+
+export type UserUpdate = {
+	email?: string | null;
+	first_name?: string | null;
+	last_name?: string | null;
 };
 
 

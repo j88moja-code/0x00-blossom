@@ -17,6 +17,7 @@ import { Route as ResetPasswordImport } from './routes/reset-password'
 import { Route as RecoverPasswordImport } from './routes/recover-password'
 import { Route as LoginImport } from './routes/login'
 import { Route as LayoutImport } from './routes/_layout'
+import { Route as LayoutAccountImport } from './routes/_layout/account'
 import { Route as LayoutStoresRequisitionsImport } from './routes/_layout/stores/requisitions'
 import { Route as LayoutStoresItemsImport } from './routes/_layout/stores/items'
 import { Route as LayoutStoresInventoryImport } from './routes/_layout/stores/inventory'
@@ -76,6 +77,11 @@ const LayoutIndexLazyRoute = LayoutIndexLazyImport.update({
   path: '/',
   getParentRoute: () => LayoutRoute,
 } as any).lazy(() => import('./routes/_layout/index.lazy').then((d) => d.Route))
+
+const LayoutAccountRoute = LayoutAccountImport.update({
+  path: '/account',
+  getParentRoute: () => LayoutRoute,
+} as any)
 
 const LayoutStoresIndexLazyRoute = LayoutStoresIndexLazyImport.update({
   path: '/stores/',
@@ -247,6 +253,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordImport
       parentRoute: typeof rootRoute
+    }
+    '/_layout/account': {
+      id: '/_layout/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof LayoutAccountImport
+      parentRoute: typeof LayoutImport
     }
     '/_layout/': {
       id: '/_layout/'
@@ -430,6 +443,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   LayoutRoute: LayoutRoute.addChildren({
+    LayoutAccountRoute,
     LayoutIndexLazyRoute,
     LayoutAssetCareEquipmentIdRoute,
     LayoutAssetCareAssetRegiterEquipmentRoute,
@@ -478,6 +492,7 @@ export const routeTree = rootRoute.addChildren({
     "/_layout": {
       "filePath": "_layout.tsx",
       "children": [
+        "/_layout/account",
         "/_layout/",
         "/_layout/asset-care/$equipmentId",
         "/_layout/asset-care/asset-regiter-equipment",
@@ -513,6 +528,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/reset-password": {
       "filePath": "reset-password.tsx"
+    },
+    "/_layout/account": {
+      "filePath": "_layout/account.tsx",
+      "parent": "/_layout"
     },
     "/_layout/": {
       "filePath": "_layout/index.lazy.tsx",

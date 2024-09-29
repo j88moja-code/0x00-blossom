@@ -2,7 +2,7 @@ import type { CancelablePromise } from './core/CancelablePromise';
 import { OpenAPI } from './core/OpenAPI';
 import { request as __request } from './core/request';
 
-import type { AuthResponse,Body_login_access_token_api_v1_auth_login_access_token_post,Body_reset_password_api_v1_auth_reset_password_post,User,EquipmentCreateModel,EquipmentInDB,EquipmentPublic,EquipmentResponseModel,EquipmentUpdateModel,MTBFCreateModel,MTBFInDB,MTBFResponseModel,MTBFUpdateModel,EquipmentAnalysisResponse,MachineDCSRelatedCheckCreate,MachineDCSRelatedCheckPublic,MachineDCSRelatedCheckResponse,MachineDCSRelatedCheckUpdate,MachineFieldCheckCreate,MachineFieldCheckPublic,MachineFieldCheckResponse,MachineFieldCheckUpdate,app__schemas__maintenance__Category,app__schemas__maintenance__CategoryCreate,app__schemas__maintenance__CategoryUpdate,CategoriesList,Department,DepartmentCreate,DepartmentList,DepartmentUpdate,Status,StatusCreate,StatusList,StatusUpdate,Type,TypeCreate,TypesList,TypeUpdate,MaintenancePTW,MaintenancePTWCreate,MaintenancePTWList,MaintenancePTWRead,MaintenancePTWUpdate,MaintenanceRequest,MaintenanceRequestCreate,MaintenanceRequestList,MaintenanceRequestRead,MaintenanceRequestUpdate,MaintenanceTicket,MaintenanceTicketCreate,MaintenanceTicketList,MaintenanceTicketRead,MaintenanceTicketUpdate,MaintenanceTRA,MaintenanceTRACreate,MaintenanceTRAList,MaintenanceTRARead,MaintenanceTRAUpdate,MaintenanceEvent,MaintenanceEventAddPlannedTickets,MaintenanceEventAddResponse,MaintenanceEventCreate,MaintenanceEventList,MaintenanceEventRead,MaintenanceEventUpdate,app__schemas__stores__Category,app__schemas__stores__CategoryCreate,app__schemas__stores__CategoryUpdate,CategoryList,CategoryRead,Inventory,InventoryCreate,InventoryList,InventoryRead,InventoryUpdate,Item,ItemCreate,ItemList,ItemRead,Order,OrderCreate,OrderList,OrderUpdate,RequisitionResponseModel,ProcessVisor,ProcessVisorCreate,ProcessVisorPublic,ProcessVisorResponse,ProcessVisorUpdate,ProcessTestCreate,ProcessTestPublic,ProcessTestResponse,ProcessTestUpdate,Downtime,DowntimeCreate,DowntimePublic,DowntimeRead,DowntimeUpdate,ProductionLog,ProductionLogCreate,ProductionLogPublic,ProductionLogRead,ProductionLogUpdate,QualityInspectionItem,QualityInspectionItemCreate,QualityInspectionItemPublic,QualityInspectionItemRead,QualityInspectionItemUpdate,Reel,ReelCreate,ReelPublic,ReelRead,ReelUpdate,StockPrepDowntime,StockPrepDowntimeCreate,StockPrepDowntimePublic,StockPrepDowntimeRead,StockPrepDowntimeUpdate,ProductionKanbanCreate,ProductionKanbanPublic,ProductionKanbanRead,ProductionKanbanUpdate,ProductSpecification,ProductSpecificationCreate,ProductSpecificationPublic,ProductSpecificationUpdate,OSHA300LogCreate,OSHA300LogList,OSHA300LogRead,OSHA300LogUpdate,RiskAssessmentCreateModel,RiskAssessmentResponseModel,RiskAssessmentsPublic,RiskAssessmentUpdateModel,SafetyObersevationsPublic,SafetyObservationCreateModel,SafetyObservationResponseModel,SafetyObservationUpdateModel,SHEIncidentCreate,SHEIncidentList,SHEIncidentRead,SHEIncidentUpdate,SHEMeetingCreate,SHEMeetingList,SHEMeetingRead,SHEMeetingUpdate,SHEQInspectionCreate,SHEQInspectionList,SHEQInspectionRead,SHEQInspectionUpdate,SHEQTrainingCreate,SHEQTrainingList,SHEQTrainingRead,SHEQTrainingUpdate,StockPrepDCSRelatedCheckCreate,StockPrepDCSRelatedCheckPublic,StockPrepDCSRelatedCheckResponse,StockPrepDCSRelatedCheckUpdate,StockPrepFieldCheckCreate,StockPrepFieldCheckPublic,StockPrepFieldCheckResponse,StockPrepFieldCheckUpdate,ConfinedSpacePermitCreate,ConfinedSpacePermitRead,ConfinedSpacePermitsList,ConfinedSpacePermitUpdate,ElectricalIsolationPermitCreate,ElectricalIsolationPermitRead,ElectricalIsolationPermitsList,ElectricalIsolationPermitUpdate,HotWorkPermitCreate,HotWorkPermitRead,HotWorkPermitsList,HotWorkPermitUpdate,RiggingAndLiftingPermitCreate,RiggingAndLiftingPermitRead,RiggingAndLiftingPermitsList,RiggingAndLiftingPermitUpdate,WorkAtHeightPermitCreate,WorkAtHeightPermitRead,WorkAtHeightPermitsList,WorkAtHeightPermitUpdate,WaterTestCreate,WaterTestPublic,WaterTestResponse,WaterTestUpdate } from './models';
+import type { AuthResponse,Body_login_access_token_api_v1_auth_login_access_token_post,Body_reset_password_api_v1_auth_reset_password_post,User,EquipmentCreateModel,EquipmentInDB,EquipmentPublic,EquipmentResponseModel,EquipmentUpdateModel,MTBFCreateModel,MTBFInDB,MTBFResponseModel,MTBFUpdateModel,EquipmentAnalysisResponse,MachineDCSRelatedCheckCreate,MachineDCSRelatedCheckPublic,MachineDCSRelatedCheckResponse,MachineDCSRelatedCheckUpdate,MachineFieldCheckCreate,MachineFieldCheckPublic,MachineFieldCheckResponse,MachineFieldCheckUpdate,app__schemas__maintenance__Category,app__schemas__maintenance__CategoryCreate,app__schemas__maintenance__CategoryUpdate,CategoriesList,Department,DepartmentCreate,DepartmentList,DepartmentUpdate,Status,StatusCreate,StatusList,StatusUpdate,Type,TypeCreate,TypesList,TypeUpdate,MaintenancePTW,MaintenancePTWCreate,MaintenancePTWList,MaintenancePTWRead,MaintenancePTWUpdate,MaintenanceRequest,MaintenanceRequestCreate,MaintenanceRequestList,MaintenanceRequestRead,MaintenanceRequestUpdate,MaintenanceTicket,MaintenanceTicketCreate,MaintenanceTicketList,MaintenanceTicketRead,MaintenanceTicketUpdate,MaintenanceTRA,MaintenanceTRACreate,MaintenanceTRAList,MaintenanceTRARead,MaintenanceTRAUpdate,MaintenanceEvent,MaintenanceEventAddResponse,MaintenanceEventCreate,MaintenanceEventList,MaintenanceEventRead,MaintenanceEventUpdate,app__schemas__stores__Category,app__schemas__stores__CategoryCreate,app__schemas__stores__CategoryUpdate,CategoryList,CategoryRead,Inventory,InventoryCreate,InventoryList,InventoryRead,InventoryUpdate,Item,ItemCreate,ItemList,ItemRead,Order,OrderCreate,OrderList,OrderUpdate,RequisitionResponseModel,ProcessVisor,ProcessVisorCreate,ProcessVisorPublic,ProcessVisorResponse,ProcessVisorUpdate,ProcessTestCreate,ProcessTestPublic,ProcessTestResponse,ProcessTestUpdate,Downtime,DowntimeCreate,DowntimePublic,DowntimeRead,DowntimeUpdate,ProductionLog,ProductionLogCreate,ProductionLogPublic,ProductionLogRead,ProductionLogUpdate,QualityInspectionItem,QualityInspectionItemCreate,QualityInspectionItemPublic,QualityInspectionItemRead,QualityInspectionItemUpdate,Reel,ReelCreate,ReelPublic,ReelRead,ReelUpdate,StockPrepDowntime,StockPrepDowntimeCreate,StockPrepDowntimePublic,StockPrepDowntimeRead,StockPrepDowntimeUpdate,ProductionKanbanCreate,ProductionKanbanPublic,ProductionKanbanRead,ProductionKanbanUpdate,ProductSpecification,ProductSpecificationCreate,ProductSpecificationPublic,ProductSpecificationUpdate,OSHA300LogCreate,OSHA300LogList,OSHA300LogRead,OSHA300LogUpdate,RiskAssessmentCreateModel,RiskAssessmentResponseModel,RiskAssessmentsPublic,RiskAssessmentUpdateModel,SafetyObersevationsPublic,SafetyObservationCreateModel,SafetyObservationResponseModel,SafetyObservationUpdateModel,SHEIncidentCreate,SHEIncidentList,SHEIncidentRead,SHEIncidentUpdate,SHEMeetingCreate,SHEMeetingList,SHEMeetingRead,SHEMeetingUpdate,SHEQInspectionCreate,SHEQInspectionList,SHEQInspectionRead,SHEQInspectionUpdate,SHEQTrainingCreate,SHEQTrainingList,SHEQTrainingRead,SHEQTrainingUpdate,StockPrepDCSRelatedCheckCreate,StockPrepDCSRelatedCheckPublic,StockPrepDCSRelatedCheckResponse,StockPrepDCSRelatedCheckUpdate,StockPrepFieldCheckCreate,StockPrepFieldCheckPublic,StockPrepFieldCheckResponse,StockPrepFieldCheckUpdate,ConfinedSpacePermitCreate,ConfinedSpacePermitRead,ConfinedSpacePermitsList,ConfinedSpacePermitUpdate,ElectricalIsolationPermitCreate,ElectricalIsolationPermitRead,ElectricalIsolationPermitsList,ElectricalIsolationPermitUpdate,HotWorkPermitCreate,HotWorkPermitRead,HotWorkPermitsList,HotWorkPermitUpdate,RiggingAndLiftingPermitCreate,RiggingAndLiftingPermitRead,RiggingAndLiftingPermitsList,RiggingAndLiftingPermitUpdate,WorkAtHeightPermitCreate,WorkAtHeightPermitRead,WorkAtHeightPermitsList,WorkAtHeightPermitUpdate,WaterTestCreate,WaterTestPublic,WaterTestResponse,WaterTestUpdate,ChangePassword,UserUpdate,Body_test_email_api_v1_test_email_post } from './models';
 
 export type TDataLoginAccessTokenApiV1AuthLoginAccessTokenPost = {
                 formData: Body_login_access_token_api_v1_auth_login_access_token_post
@@ -2065,17 +2065,8 @@ skip?: number
 startDate?: string | null
                 
             }
-export type TDataCreateMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsPost = {
-                requestBody: MaintenanceEventCreate
-                
-            }
 export type TDataGetMaintenanceEventApiV1MaintenancePlanningEventsIdGet = {
                 id: number
-                
-            }
-export type TDataAddTicketsToMaintenanceEventApiV1MaintenancePlanningEventsIdAddTickesPut = {
-                id: number
-requestBody: MaintenanceEventAddPlannedTickets
                 
             }
 export type TDataCreateMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsWithTicketsPost = {
@@ -2131,26 +2122,6 @@ startDate,
 	}
 
 	/**
-	 * Create Maintenance Event With Tickets
-	 * @returns MaintenanceEventRead Successful Response
-	 * @throws ApiError
-	 */
-	public static createMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsPost(data: TDataCreateMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsPost): CancelablePromise<MaintenanceEventRead> {
-		const {
-requestBody,
-} = data;
-		return __request(OpenAPI, {
-			method: 'POST',
-			url: '/api/v1/maintenance-planning/events',
-			body: requestBody,
-			mediaType: 'application/json',
-			errors: {
-				422: `Validation Error`,
-			},
-		});
-	}
-
-	/**
 	 * Get Maintenance Event
 	 * @returns MaintenanceEvent Successful Response
 	 * @throws ApiError
@@ -2165,30 +2136,6 @@ id,
 			path: {
 				id
 			},
-			errors: {
-				422: `Validation Error`,
-			},
-		});
-	}
-
-	/**
-	 * Add Tickets To Maintenance Event
-	 * @returns MaintenanceEventRead Successful Response
-	 * @throws ApiError
-	 */
-	public static addTicketsToMaintenanceEventApiV1MaintenancePlanningEventsIdAddTickesPut(data: TDataAddTicketsToMaintenanceEventApiV1MaintenancePlanningEventsIdAddTickesPut): CancelablePromise<MaintenanceEventRead> {
-		const {
-id,
-requestBody,
-} = data;
-		return __request(OpenAPI, {
-			method: 'PUT',
-			url: '/api/v1/maintenance-planning/events/{id}/add-tickes',
-			path: {
-				id
-			},
-			body: requestBody,
-			mediaType: 'application/json',
 			errors: {
 				422: `Validation Error`,
 			},
@@ -5621,6 +5568,116 @@ id,
 
 }
 
+
+
+export class SafetyAnalysisService {
+
+	/**
+	 * Get Incidents Over Time
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getIncidentsOverTimeApiV1SafetyAnalyticsIncidentsOverTimeGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/incidents-over-time',
+		});
+	}
+
+	/**
+	 * Get Incidents
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getIncidentsApiV1SafetyAnalyticsIncidentsGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/incidents',
+		});
+	}
+
+	/**
+	 * Get Osha300 Over Time
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getOsha300OverTimeApiV1SafetyAnalyticsOsha300OverTimeGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/osha300-over-time',
+		});
+	}
+
+	/**
+	 * Get Osha300 By Department
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getOsha300ByDepartmentApiV1SafetyAnalyticsOsha300ByDepartmentGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/osha300-by-department',
+		});
+	}
+
+	/**
+	 * Get Osha300 By Lost Work Days
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getOsha300ByLostWorkDaysApiV1SafetyAnalyticsOsha300ByLostWorkDaysGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/osha300-by-lost-work-days',
+		});
+	}
+
+	/**
+	 * Get Safety Observations Over Time
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getSafetyObservationsOverTimeApiV1SafetyAnalyticsSafetyObservationsOverTimeGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/safety-observations-over-time',
+		});
+	}
+
+	/**
+	 * Get Safety Observations Severity
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getSafetyObservationsSeverityApiV1SafetyAnalyticsSafetyObservationsSeverityGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/safety-observations-severity',
+		});
+	}
+
+	/**
+	 * Get Ltifr
+	 * Fetch data from the specified table and return data for charting.
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static getLtifrApiV1SafetyAnalyticsLtifrGet(): CancelablePromise<unknown> {
+				return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/safety-analytics/ltifr',
+		});
+	}
+
+}
+
 export type TDataReadAllStockPrepDcsRelatedChecksApiV1SpDcsChecksGet = {
                 endDate?: string | null
 limit?: number
@@ -7245,6 +7302,16 @@ export type TDataGetUserApiV1UsersUserIdGet = {
                 userId: string
                 
             }
+export type TDataUpdateUserApiV1UsersUserIdPut = {
+                requestBody: UserUpdate
+userId: string
+                
+            }
+export type TDataUpdateUserPasswordApiV1UsersPasswordUserIdPut = {
+                requestBody: ChangePassword
+userId: string
+                
+            }
 
 export class UsersService {
 
@@ -7318,6 +7385,83 @@ userId,
 			path: {
 				user_id: userId
 			},
+			errors: {
+				422: `Validation Error`,
+			},
+		});
+	}
+
+	/**
+	 * Update User
+	 * @returns User Successful Response
+	 * @throws ApiError
+	 */
+	public static updateUserApiV1UsersUserIdPut(data: TDataUpdateUserApiV1UsersUserIdPut): CancelablePromise<User> {
+		const {
+requestBody,
+userId,
+} = data;
+		return __request(OpenAPI, {
+			method: 'PUT',
+			url: '/api/v1/users/{user_id}',
+			path: {
+				user_id: userId
+			},
+			body: requestBody,
+			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`,
+			},
+		});
+	}
+
+	/**
+	 * Update User Password
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static updateUserPasswordApiV1UsersPasswordUserIdPut(data: TDataUpdateUserPasswordApiV1UsersPasswordUserIdPut): CancelablePromise<unknown> {
+		const {
+requestBody,
+userId,
+} = data;
+		return __request(OpenAPI, {
+			method: 'PUT',
+			url: '/api/v1/users/password/{user_id}',
+			path: {
+				user_id: userId
+			},
+			body: requestBody,
+			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`,
+			},
+		});
+	}
+
+}
+
+export type TDataTestEmailApiV1TestEmailPost = {
+                requestBody: Body_test_email_api_v1_test_email_post
+                
+            }
+
+export class UtilisService {
+
+	/**
+	 * Test Email
+	 * @returns unknown Successful Response
+	 * @throws ApiError
+	 */
+	public static testEmailApiV1TestEmailPost(data: TDataTestEmailApiV1TestEmailPost): CancelablePromise<unknown> {
+		const {
+requestBody,
+} = data;
+		return __request(OpenAPI, {
+			method: 'POST',
+			url: '/api/v1/test-email',
+			body: requestBody,
+			mediaType: 'application/json',
 			errors: {
 				422: `Validation Error`,
 			},
