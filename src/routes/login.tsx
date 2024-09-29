@@ -71,7 +71,7 @@ function Login() {
             label="Email"
             type="email"
             register={register("username", {
-              required: "Username is required",
+              required: "Email is required",
               pattern: emailPattern,
             })}
             error={errors?.username?.message}
