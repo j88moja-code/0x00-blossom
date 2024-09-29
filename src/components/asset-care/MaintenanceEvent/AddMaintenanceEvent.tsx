@@ -40,7 +40,7 @@ const AddMaintenanceEvent: React.FC<AddMaintenanceEventProps> = ({
 
   const mutation = useMutation({
     mutationFn: (data: MaintenanceEventCreate) =>
-      MaintenancePlanningService.createMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsPost(
+      MaintenancePlanningService.createMaintenanceEventWithTicketsApiV1MaintenancePlanningEventsWithTicketsPost(
         {
           requestBody: data,
         }

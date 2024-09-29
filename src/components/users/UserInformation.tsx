@@ -18,7 +18,6 @@ const UserInformation = () => {
     register,
     handleSubmit,
     reset,
-    getValues,
     formState: { isSubmitting, errors, isDirty },
   } = useForm<UserUpdate>({
     defaultValues: {

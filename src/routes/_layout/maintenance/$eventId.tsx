@@ -1,10 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { useQuery } from "@tanstack/react-query";
-import {
-  type MaintenanceEvent as ApiMaintenanceEvent,
-  MaintenancePlanningService,
-} from "../../../client";
+import { MaintenancePlanningService } from "../../../client";
 import { ContentLayout } from "../../../components/common/layout/ContentLayout";
 import {
   Breadcrumb,
@@ -16,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import useTitle from "@/hooks/useTitle";
 
-import MaintenanceEvent from "../../../components/asset-care/MaintenanceEvent/MaintenanceEvent";
+// import MaintenanceEvent from "../../../components/asset-care/MaintenanceEvent/MaintenanceEvent";
 
 const idNavigateSchema = z.object({
   eventId: z.preprocess((val) => Number(val), z.number().int().positive()),
@@ -133,9 +130,9 @@ function IndividualMaintenanceEvent() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <MaintenanceEvent
+        {/* <MaintenanceEvent
           maintenanceEvent={maintenanceEvent as ApiMaintenanceEvent}
-        />
+        /> */}
       </ContentLayout>
     </>
   );
