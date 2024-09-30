@@ -97,7 +97,7 @@ function Login() {
                 htmlFor="remember"
                 className="ml-2 block text-sm text-gray-900 dark:text-gray-300"
               >
-                Remember me
+                Trust this Device?
               </label>
             </div>
           </div>
