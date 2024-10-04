@@ -1,4 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,6 +23,22 @@ export const Route = createLazyFileRoute("/_layout/")({
 function HomePage() {
   useTitle("CMOOS Dashboard");
   const { user: currentUser } = useAuth();
+  // greeting
+  const [greeting, setGreeting] = useState("");
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+    let newGreeting;
+
+    if (currentHour >= 6 && currentHour < 12) {
+      newGreeting = "Good morning";
+    } else if (currentHour >= 12 && currentHour < 18) {
+      newGreeting = "Good afternoon";
+    } else {
+      newGreeting = "Good evening";
+    }
+
+    setGreeting(newGreeting);
+  }, []);
   return (
     <>
       <ContentLayout title="Dashboard">
@@ -33,11 +50,12 @@ function HomePage() {
           </BreadcrumbList>
         </Breadcrumb>
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-          Hi, {currentUser?.full_name} 👋🏼
+          {greeting} {currentUser?.full_name}
         </h4>
-        <div>
-          <Tabs defaultValue="main" className="space-y-4">
-            <TabsList className="flex flex-wrap justify-center sm:justify-start gap-2">
+
+        <Tabs defaultValue="main" className="space-y-4">
+          <div className="flex flex-col items-center justify-center">
+            <TabsList className="flex flex-wrap justify-center sm:justify-start mb-4 gap-2">
               <TabsTrigger
                 value="main"
                 // className="px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-blue-100"
@@ -63,20 +81,20 @@ function HomePage() {
                 Maintenance Tickets
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="main" className="mt-4">
-              <MainDashboard />
-            </TabsContent>
-            <TabsContent value="equipment">
-              <EquipmentAnalysisCharts />
-            </TabsContent>
-            <TabsContent value="maintenance-requests">
-              <MaintenanceAnalysisCharts />
-            </TabsContent>
-            <TabsContent value="maintenance-tickets">
-              <MaintenanceTicketsAnalysis />
-            </TabsContent>
-          </Tabs>
-        </div>
+          </div>
+          <TabsContent value="main" className="mt-4">
+            <MainDashboard />
+          </TabsContent>
+          <TabsContent value="equipment">
+            <EquipmentAnalysisCharts />
+          </TabsContent>
+          <TabsContent value="maintenance-requests">
+            <MaintenanceAnalysisCharts />
+          </TabsContent>
+          <TabsContent value="maintenance-tickets">
+            <MaintenanceTicketsAnalysis />
+          </TabsContent>
+        </Tabs>
       </ContentLayout>
     </>
   );

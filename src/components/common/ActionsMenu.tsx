@@ -330,7 +330,7 @@ const ActionsMenu: React.FC<ActionsMenuProps> = ({ type, value, disabled }) => {
               onClick={() => {
                 handleDeleteOpen();
               }}
-              disabled={disabled}
+              disabled={true}
               className="flex items-center gap-2"
             >
               <span className="flex items-center gap-2">

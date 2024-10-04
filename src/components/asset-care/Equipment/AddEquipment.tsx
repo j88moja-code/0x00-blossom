@@ -194,6 +194,9 @@ const AddEquipment: React.FC<AddEquipmentProps> = ({ open, onClose }) => {
       <Input
         label="Severity"
         type="number"
+        min={1}
+        max={10}
+        step="any"
         register={register("severity")}
         error={errors.severity?.message}
       />
@@ -201,6 +204,9 @@ const AddEquipment: React.FC<AddEquipmentProps> = ({ open, onClose }) => {
       <Input
         label="Detectability"
         type="number"
+        min={1}
+        max={10}
+        step="any"
         register={register("detectability")}
         error={errors.detectability?.message}
       />
@@ -208,6 +214,9 @@ const AddEquipment: React.FC<AddEquipmentProps> = ({ open, onClose }) => {
       <Input
         label="Occurrence"
         type="number"
+        min={1}
+        max={10}
+        step="any"
         register={register("occurrence")}
         error={errors.occurrence?.message}
       />

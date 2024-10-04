@@ -144,12 +144,16 @@ const AddReelToProductionLog: React.FC<AddReelToProductionLogProps> = ({
     field: keyof ReelCreate,
     register: any,
     errors: any,
-    required = false
+    required = false,
+    min = 0,
+    max = 0
   ) => (
     <Input
       label={label}
       type="number"
       step="any"
+      min={min}
+      max={max}
       register={register(field, {
         required: required ? `${label} is required` : false,
       })}
@@ -213,19 +217,50 @@ const AddReelToProductionLog: React.FC<AddReelToProductionLogProps> = ({
             error={errors.end_time?.message}
           />
         </div>
+        <div className="flex justify-between mb-4">
+          <p className="text-sm font-medium text-red-700 dark:text-red-300">
+            NB: Reel start and end times can not be changed
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          {renderTextField("Weight", "weight", register, errors, true)}
-          {renderTextField("Grammage", "grammage", register, errors, true)}
-          {renderTextField("Deckle", "deckle", register, errors, true)}
+          {renderTextField("Weight", "weight", register, errors, true, 0, 3000)}
+          {renderTextField(
+            "Grammage",
+            "grammage",
+            register,
+            errors,
+            true,
+            11,
+            40
+          )}
+          {renderTextField(
+            "Deckle",
+            "deckle",
+            register,
+            errors,
+            true,
+            2400,
+            2700
+          )}
 
           {renderTextField(
             "Machine Speed",
             "machine_speed",
             register,
             errors,
-            true
+            true,
+            0,
+            1500
           )}
-          {renderTextField("Pope Speed", "pope_speed", register, errors, true)}
+          {renderTextField(
+            "Pope Speed",
+            "pope_speed",
+            register,
+            errors,
+            true,
+            0,
+            1285
+          )}
           <div className="flex flex-col space-y-2">
             <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Crepe Ratio

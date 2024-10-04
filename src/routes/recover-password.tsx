@@ -85,7 +85,11 @@ function RecoverPassword() {
               pattern: emailPattern,
             })}
           />
-          <Button type="submit" className="w-full mt-6" disabled={isSubmitting}>
+          <Button
+            type="submit"
+            className="w-full mt-6 mb-2"
+            disabled={isSubmitting}
+          >
             Recover Password
           </Button>
         </form>

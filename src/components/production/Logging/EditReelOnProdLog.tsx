@@ -51,7 +51,6 @@ const EditReelOnProductionLog: React.FC<EditReelOnProductionLogProps> = ({
     handleSubmit,
     control,
     reset,
-    getValues,
     watch,
     formState: { errors, isSubmitting, isDirty },
   } = useForm<ReelUpdate>({
@@ -135,19 +134,23 @@ const EditReelOnProductionLog: React.FC<EditReelOnProductionLogProps> = ({
     field: keyof ReelUpdate,
     register: any,
     errors: any,
-    required = false
+    required = false,
+    min = 0,
+    max = 0
   ) => (
     <Input
       label={label}
       type="number"
       step="any"
+      min={min}
+      max={max}
       register={register(field, {
         required: required ? `${label} is required` : false,
       })}
       error={errors[field]?.message}
     />
   );
-  const shift = productionLog?.kanban?.shift;
+  // const shift = productionLog?.kanban?.shift;
 
   return (
     <>
@@ -183,7 +186,7 @@ const EditReelOnProductionLog: React.FC<EditReelOnProductionLogProps> = ({
             )}
           />
         </div>
-        <div className="flex justify-between mb-4">
+        {/* <div className="flex justify-between mb-4">
           <Input
             label="Start Time"
             type="time"
@@ -205,6 +208,11 @@ const EditReelOnProductionLog: React.FC<EditReelOnProductionLogProps> = ({
             })}
             error={errors.end_time?.message}
           />
+        </div> */}
+        <div className="flex justify-between mb-4">
+          <p className="text-sm font-medium text-red-700 dark:text-red-300">
+            Reel start and end times can not be changed
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {renderTextField("Weight", "weight", register, errors, true)}
