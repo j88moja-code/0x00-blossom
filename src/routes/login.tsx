@@ -69,7 +69,7 @@ function Login() {
       {/* Interactive Features Section */}
       <div className="flex-1 mt-12 md:mt-0 text-center max-w-lg px-4 sm:px-6 md:px-8 space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-white">
-          Welcome to Centralised Management of Operations Systems
+          Welcome to Centralised Management of Operations System
           <br />
           <p className="text-base sm:text-lg text-gray-200">
             CMOOS is a web-based platform that allows users to easily manage
