@@ -72,14 +72,11 @@ function Login() {
           Welcome to Centralised Management of Operations Systems
           <br />
           <p className="text-base sm:text-lg text-gray-200">
-            CMOOS is a web-based platform that allows users to manage day to day
-            operations.
+            CMOOS is a web-based platform that allows users to easily manage
+            day-to-day data capturing, reporting and analysis for various
+            operations needs.
           </p>
-          <div className="flex justify-center"></div>
         </h2>
-        <p className="text-base sm:text-lg text-gray-200">
-          By logging in, you can:
-        </p>
         <div className="flex flex-wrap justify-center gap-4 text-white">
           {/* Asset Tracking Feature */}
           <div className="flex flex-col items-center transition-transform hover:scale-105">
