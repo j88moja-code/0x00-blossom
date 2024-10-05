@@ -16,6 +16,7 @@ import Logo from "../assets/images/logo.png";
 import AssetCare from "../assets/images/equipment.png";
 import Build from "../assets/images/build.png";
 import Reports from "../assets/images/dashboard_2328966.png";
+import Background from "../assets/images/patrick-hendry-6xeDIZgoPaw-unsplash.jpg"
 import useAuth, { isLoggedIn } from "../hooks/useAuth";
 import { emailPattern } from "../utils";
 import type { Body_login_access_token_api_v1_auth_login_access_token_post as AccessToken } from "../client";
@@ -65,7 +66,14 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 dark:from-indigo-600 dark:via-indigo-700">
+    
+   <div className="min-h-screen flex flex-col md:flex-row items-center justify-center"
+    style={{
+      backgroundImage: `url(${Background})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
       {/* Interactive Features Section */}
       <div className="flex-1 mt-12 md:mt-0 text-center max-w-lg px-4 sm:px-6 md:px-8 space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-white">
@@ -177,4 +185,3 @@ function Login() {
   );
 }
 
-export default Login;
