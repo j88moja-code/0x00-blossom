@@ -16,7 +16,7 @@ import Logo from "../assets/images/logo.png";
 import AssetCare from "../assets/images/equipment.png";
 import Build from "../assets/images/build.png";
 import Reports from "../assets/images/dashboard_2328966.png";
-import Background from "../assets/images/patrick-hendry-6xeDIZgoPaw-unsplash.jpg"
+import Background from "../assets/images/patrick-hendry-6xeDIZgoPaw-unsplash.jpg";
 import useAuth, { isLoggedIn } from "../hooks/useAuth";
 import { emailPattern } from "../utils";
 import type { Body_login_access_token_api_v1_auth_login_access_token_post as AccessToken } from "../client";
@@ -66,25 +66,29 @@ function Login() {
   };
 
   return (
-    
-   <div className="min-h-screen flex flex-col md:flex-row items-center justify-center"
-    style={{
-      backgroundImage: `url(${Background})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  >
+    <div
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center relative"
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Background overlay for dimming */}
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
       {/* Interactive Features Section */}
-      <div className="flex-1 mt-12 md:mt-0 text-center max-w-lg px-4 sm:px-6 md:px-8 space-y-6">
+      <div className="flex-1 mt-12 md:mt-0 text-center max-w-lg px-4 sm:px-6 md:px-8 space-y-6 relative z-10">
         <h2 className="text-2xl sm:text-3xl font-bold text-white">
           Welcome to Centralised Management of Operations System
           <br />
           <p className="text-base sm:text-lg text-gray-200">
             CMOOS is a web-based platform that allows users to easily manage
-            day-to-day data capturing, reporting and analysis for various
+            day-to-day data capturing, reporting, and analysis for various
             operations needs.
           </p>
         </h2>
+
         <div className="flex flex-wrap justify-center gap-4 text-white">
           {/* Asset Tracking Feature */}
           <div className="flex flex-col items-center transition-transform hover:scale-105">
@@ -103,7 +107,7 @@ function Login() {
           {/* View Reports Feature */}
           <div className="flex flex-col items-center transition-transform hover:scale-105">
             <span className="material-icons text-4xl sm:text-5xl">
-              Get advanced Analtics
+              Get advanced Analytics
             </span>
             <img src={Reports} alt="Reports" className="w-12 h-12 mt-2" />
           </div>
@@ -114,7 +118,7 @@ function Login() {
       </div>
 
       {/* Login Card */}
-      <div className="flex-1 w-full max-w-xs sm:max-w-md p-6 sm:p-8 bg-white dark:bg-gray-800 shadow-xl rounded-lg transition-transform hover:scale-105">
+      <div className="flex-1 w-full max-w-xs sm:max-w-md p-6 sm:p-8 bg-white dark:bg-gray-800 shadow-xl rounded-lg transition-transform hover:scale-105 relative z-10">
         <img
           src={Logo}
           alt="CMOOS logo"
@@ -184,4 +188,3 @@ function Login() {
     </div>
   );
 }
-
